@@ -22,24 +22,7 @@ class AmplifyInfraStack(cdk.Stack):
         repository="react-sample",
         oauth_token=cdk.SecretValue.secrets_manager("trainer-github-token")),
 
-        build_spec=codebuild.BuildSpec.from_object_to_yaml({# Alternatively add a `amplify.yml` to the repo
-        "version": "1.0",
-        "frontend": {
-            "phases": {
-                "pre_build": {
-                    "commands": ["yarn install"
-                    ]
-                },
-                "build": {
-                    "commands": ["yarn build"
-                    ]
-                }
-            },
-            "artifacts": {
-                "base_directory": "public",
-                "files": "**/*"
-            }
-            }})
+       
             )
         amplify_app.add_branch("master")    
 
