@@ -27,7 +27,7 @@ class AmplifyInfraStack(cdk.Stack):
         "frontend": {
             "phases": {
                 "pre_build": {
-                    "commands": ["yarn"
+                    "commands": ["yarn install"
                     ]
                 },
                 "build": {
